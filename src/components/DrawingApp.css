@@ -1,0 +1,75 @@
+/* DrawingApp.css */
+.drawing-app {
+    display: flex;
+    height: 100vh;
+  }
+  
+  .toolbox {
+    width: 200px;
+    padding: 20px;
+    background-color: #f0f0f0;
+  }
+  
+  .shape-options {
+    margin-bottom: 20px;
+  }
+  
+  .shape-button {
+    margin: 5px 0;
+    cursor: pointer;
+    padding: 5px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    text-align: center;
+    user-select: none;
+    border-radius: 5px;
+  }
+  
+  .color-picker {
+    margin-bottom: 20px;
+  }
+  
+  .save-button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .canvas {
+    flex: 1;
+    position: relative;
+    border: 1px solid #ccc;
+    background-color: #fff;
+  }
+  
+  .shape {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+  }
+  
+  .circle {
+    border-radius: 50%;
+  }
+  
+  .triangle {
+    width: 0;
+    height: 0;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    position: relative;
+  }
+  
+  .square {
+    border-radius: 0;
+  }
+  
+  .star {
+    width: 0;
+    height: 0;
+    position: relative;
+  }
+  
