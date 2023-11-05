@@ -4,7 +4,7 @@ import Todo from "./Todo";
 import DrawingApp from "./DrawingApp";
 
 const Tabs: React.FC = () => {
-  const [activeTab, setActiveTab] = useState(0); // Initial active tab index
+  const [activeTab, setActiveTab] = useState(2); // Initial active tab index
 
   const tabLabels = ["Notes", "Todos", "Drawing", "2048"];
 
@@ -44,7 +44,7 @@ const Tabs: React.FC = () => {
         {/* Render content based on the active tab */}
         {activeTab === 0 && <Notes />}
         {activeTab === 1 && <Todo />}
-        {/* {activeTab === 2 && <DrawingApp />} */}
+        {activeTab === 2 && <DrawingApp />}
         {activeTab === 3 && <div>2048 Game come here</div>}
         {activeTab === 4 && <div>Yet to decide</div>}
       </div>

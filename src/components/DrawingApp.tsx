@@ -62,6 +62,36 @@ const DrawingApp: React.FC = () => {
     }
   };
 
+  const downloadCanvas = () => {
+    if (canvasRef.current) {
+      const dataURL = canvasRef.current.toDataURL("image/png");
+
+      // Create a new canvas to set the background color to white
+      const tempCanvas = document.createElement("canvas");
+      const tempContext = tempCanvas.getContext("2d");
+
+      if (tempContext) {
+        tempCanvas.width = canvasRef.current.width;
+        tempCanvas.height = canvasRef.current.height;
+
+        // Fill the temporary canvas with a white background
+        tempContext.fillStyle = "#ffffff"; // White color
+        tempContext.fillRect(0, 0, tempCanvas.width, tempCanvas.height);
+
+        // Draw the original canvas content on top of the white background
+        tempContext.drawImage(canvasRef.current, 0, 0);
+
+        // Convert the temporary canvas to a data URL for download
+        const tempDataURL = tempCanvas.toDataURL("image/png");
+
+        const a = document.createElement("a");
+        a.href = tempDataURL;
+        a.download = "drawing.png";
+        a.click();
+      }
+    }
+  };
+
   return (
     <div className="flex flex-col items-center justify-center h-screen">
       <h1 className="text-2xl mb-4">Drawing App</h1>
@@ -99,10 +129,16 @@ const DrawingApp: React.FC = () => {
 
       <div className="mt-4">
         <button
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2"
+          className="bg-blue-500 hover-bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2"
           onClick={clearCanvas}
         >
           Clear
+        </button>
+        <button
+          className="bg-blue-500 hover-bg-blue-700 text-white font-bold py-2 px-4 rounded"
+          onClick={downloadCanvas}
+        >
+          Download
         </button>
       </div>
     </div>
