@@ -1,10 +1,8 @@
-# create-t3-extension
-
 Chrome Extension: React + TypeScript + TailWind CSS
 
-## Prerequisites
+<!-- ## Prerequisites
 
-- [node + npm](https://nodejs.org/) (Current Version)
+- [node + npm](https://nodejs.org/) (Current Version) -->
 
 ## Includes the following
 
@@ -40,6 +38,3 @@ npm run watch
 ```
 
 ## References
-[https://github.com/chibat/chrome-extension-typescript-starter](https://github.com/chibat/chrome-extension-typescript-starter)
-
-[https://github.com/t3-oss/create-t3-app](https://github.com/t3-oss/create-t3-app)
